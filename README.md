@@ -185,3 +185,5 @@ Node.Js/
 1. **PHP Native**: Buka `http://localhost:1234/php-native/auth/register.php` → daftar → login → uji CRUD
 2. **CI4**: Buka `http://localhost:8080/register` → daftar → login → uji CRUD
 3. **Node.js**: Buka `http://localhost:3000/register` → daftar → login → uji CRUD
+4. **Admin**: ```username: admin | password: admin123```
+5. **User**: ```username: akhdan | password: Akhdan123```
