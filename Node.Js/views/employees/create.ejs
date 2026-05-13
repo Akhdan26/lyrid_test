@@ -1,0 +1,40 @@
+<%- include('../layouts/head') %>
+<%- include('../layouts/sidebar', { active: 'employees' }) %>
+<%- include('../layouts/navbar', { title: 'Tambah Pegawai' }) %>
+<div class="d-flex align-items-center mb-4">
+  <a href="/employees" class="btn btn-outline-secondary me-3"><i class="bi bi-arrow-left"></i></a>
+  <h4 class="mb-0"><i class="bi bi-person-plus me-2"></i>Tambah Pegawai Baru</h4>
+</div>
+<div class="card border-0 shadow-sm">
+  <div class="card-body p-4">
+    <form action="/employees/store" method="post" enctype="multipart/form-data">
+      <div class="row g-3">
+        <div class="col-md-6">
+          <label class="form-label">Nama Lengkap</label>
+          <input type="text" name="name" class="form-control" required>
+        </div>
+        <div class="col-md-6">
+          <label class="form-label">Email</label>
+          <input type="email" name="email" class="form-control" required>
+        </div>
+        <div class="col-md-6">
+          <label class="form-label">Telepon</label>
+          <input type="text" name="phone" class="form-control" required>
+        </div>
+        <div class="col-md-6">
+          <label class="form-label">Alamat</label>
+          <textarea name="address" class="form-control" rows="2"></textarea>
+        </div>
+        <div class="col-md-6">
+          <label class="form-label">Foto <small class="text-muted">(JPG/JPEG, maks 300KB)</small></label>
+          <input type="file" name="photo" class="form-control" accept="image/jpeg">
+        </div>
+        <div class="col-12">
+          <button type="submit" class="btn btn-primary"><i class="bi bi-save me-1"></i>Simpan</button>
+          <a href="/employees" class="btn btn-outline-secondary">Batal</a>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+<%- include('../layouts/foot') %>

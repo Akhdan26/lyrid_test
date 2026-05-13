@@ -1,0 +1,40 @@
+<%- include('../layouts/head') %>
+<%- include('../layouts/sidebar', { active: 'users' }) %>
+<%- include('../layouts/navbar', { title: 'Tambah User' }) %>
+<div class="d-flex align-items-center mb-4">
+  <a href="/users" class="btn btn-outline-secondary me-3"><i class="bi bi-arrow-left"></i></a>
+  <h4 class="mb-0"><i class="bi bi-person-plus me-2"></i>Tambah User Baru</h4>
+</div>
+<div class="card border-0 shadow-sm">
+  <div class="card-body p-4">
+    <form action="/users/store" method="post">
+      <div class="row g-3">
+        <div class="col-md-6">
+          <label class="form-label">Nama Lengkap</label>
+          <input type="text" name="name" class="form-control" required>
+        </div>
+        <div class="col-md-6">
+          <label class="form-label">Username</label>
+          <input type="text" name="username" class="form-control" required>
+        </div>
+        <div class="col-md-6">
+          <label class="form-label">Password</label>
+          <input type="password" name="password" class="form-control" required>
+        </div>
+        <div class="col-md-6">
+          <label class="form-label">Role</label>
+          <select name="role" class="form-select" required>
+            <option value="">-- Pilih Role --</option>
+            <option value="admin">Admin</option>
+            <option value="user">User</option>
+          </select>
+        </div>
+        <div class="col-12">
+          <button type="submit" class="btn btn-primary"><i class="bi bi-save me-1"></i>Simpan</button>
+          <a href="/users" class="btn btn-outline-secondary">Batal</a>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+<%- include('../layouts/foot') %>

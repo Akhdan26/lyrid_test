@@ -1,0 +1,39 @@
+<%- include('../layouts/head') %>
+<%- include('../layouts/sidebar', { active: 'users' }) %>
+<%- include('../layouts/navbar', { title: 'Edit User' }) %>
+<div class="d-flex align-items-center mb-4">
+  <a href="/users" class="btn btn-outline-secondary me-3"><i class="bi bi-arrow-left"></i></a>
+  <h4 class="mb-0"><i class="bi bi-pencil-square me-2"></i>Edit User</h4>
+</div>
+<div class="card border-0 shadow-sm">
+  <div class="card-body p-4">
+    <form action="/users/update/<%= user.id %>" method="post">
+      <div class="row g-3">
+        <div class="col-md-6">
+          <label class="form-label">Nama Lengkap</label>
+          <input type="text" name="name" class="form-control" value="<%= user.name %>" required>
+        </div>
+        <div class="col-md-6">
+          <label class="form-label">Username</label>
+          <input type="text" name="username" class="form-control" value="<%= user.username %>" required>
+        </div>
+        <div class="col-md-6">
+          <label class="form-label">Password <small class="text-muted">(kosongkan jika tidak diganti)</small></label>
+          <input type="password" name="password" class="form-control">
+        </div>
+        <div class="col-md-6">
+          <label class="form-label">Role</label>
+          <select name="role" class="form-select" required>
+            <option value="admin" <%= user.role === 'admin' ? 'selected' : '' %>>Admin</option>
+            <option value="user" <%= user.role === 'user' ? 'selected' : '' %>>User</option>
+          </select>
+        </div>
+        <div class="col-12">
+          <button type="submit" class="btn btn-primary"><i class="bi bi-save me-1"></i>Update</button>
+          <a href="/users" class="btn btn-outline-secondary">Batal</a>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+<%- include('../layouts/foot') %>

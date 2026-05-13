@@ -1,0 +1,9 @@
+<%- include('layouts/head') %>
+<div class="container d-flex align-items-center justify-content-center min-vh-100">
+  <div class="text-center">
+    <h1 class="display-1 fw-bold text-muted">404</h1>
+    <p class="lead"><%= typeof message !== 'undefined' ? message : 'Halaman tidak ditemukan.' %></p>
+    <a href="/" class="btn btn-primary"><i class="bi bi-house me-2"></i>Kembali ke Dashboard</a>
+  </div>
+</div>
+<%- include('layouts/foot') %>
