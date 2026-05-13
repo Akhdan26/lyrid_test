@@ -1,0 +1,23 @@
+# Dependencies
+CI4/vendor/
+Node.Js/node_modules/
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Uploaded user files (keep dir, ignore contents)
+php-native/uploads/*
+!php-native/uploads/.gitkeep
+CI4/public/uploads/*
+!CI4/public/uploads/.gitkeep
+Node.Js/public/uploads/*
+!Node.Js/public/uploads/.gitkeep
+
+# Env / config lokal (jangan commit password)
+.env
+*.local.php
+
+# IDE
+.vscode/
+.idea/
